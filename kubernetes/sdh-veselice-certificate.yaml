@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: sdh-veselice
+  namespace: sdh-veselice
+spec:
+  secretName: sdh-veselice-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  commonName: volnekurty.cz
+  dnsNames:
+  - www.volnekurty.cz
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - volnekurty.cz
+      - www.volnekurty.cz

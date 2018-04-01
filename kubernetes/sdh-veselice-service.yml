@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sdh-veselice
+  namespace: sdh-veselice
+spec:
+  selector:
+    app: sdh-veselice
+  ports:
+  - protocol: TCP
+    port: 80
